@@ -103,11 +103,12 @@ public class RNFirebaseModule extends ReactContextBaseJavaModule {
 
     if (status != ConnectionResult.SUCCESS && gapi.isUserResolvableError(status)) {
       Activity activity = getCurrentActivity();
-      if (activity != null) {
-        gapi
-          .getErrorDialog(activity, status, status)
-          .show();
-      }
+      // 隐藏不支持google服务弹框
+      // if (activity != null) {
+      //   gapi
+      //     .getErrorDialog(activity, status, status)
+      //     .show();
+      // }
     }
   }
 
